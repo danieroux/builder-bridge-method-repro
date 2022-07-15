@@ -1,5 +1,9 @@
-{:deps     {com.github.steffan-westcott/clj-otel-api                   {:mvn/version "0.1.4"}
-            org.clojure/clojure                                        {:mvn/version "1.11.1"}
-            io.opentelemetry/opentelemetry-sdk-extension-autoconfigure {:mvn/version "1.15.0-alpha"}
-            io.opentelemetry/opentelemetry-exporter-otlp               {:mvn/version "1.15.0"}}
- :paths    ["src"]}
+{:deps    {com.github.steffan-westcott/clj-otel-api                   {:mvn/version "0.1.4"}
+           org.clojure/clojure                                        {:mvn/version "1.11.1"}
+           io.opentelemetry/opentelemetry-sdk-extension-autoconfigure {:mvn/version "1.15.0-alpha"}
+           io.opentelemetry/opentelemetry-exporter-otlp               {:mvn/version "1.15.0"}}
+
+ :aliases {:fails    {:exec-fn repro.inner-builder-with-defs/make-builder}
+           :succeeds {:exec-fn repro.inner-builder/make-builder}}
+
+ :paths   ["src"]}
